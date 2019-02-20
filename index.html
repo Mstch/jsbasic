@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="lib/cntl.css">
+    <script type="text/javascript" src="lib/jquery.cntl.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "Microsoft YaHei UI Light", 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+            transition: all .1s;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        a{
+            color:#666;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a:hover{
+            color: #ff9282;
+        }
+        .cntl-icon{
+            width:6rem;
+            height:6rem;
+            line-height: 6rem;
+            font-size:1rem;
+            font-weight: 600;
+        }
+        .cntl-content p span{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cntl">
+        <span class="cntl-bar cntl-center">
+            <span class="cntl-bar-fill"></span>
+        </span>
+        <div class="cntl-states">
+            <div class="cntl-state">
+                <div class="cntl-content">
+                    <h4>2019/02/14</h4>
+                    <p>
+                        <span> 仿QQ空间图册(几乎是原生js+css哦)：<a target="_blank" href="20190214/photo.html">图册</a></span>
+
+                        <span> 正则表单验证：<a target="_blank" href="20190214/reg.html">表单验证</a></span>
+                    </p>
+                </div>
+                <div class="cntl-icon cntl-center">0214</div>
+            </div>
+
+            <div class="cntl-state">
+                <div class="cntl-content">
+                    <h4>2019/02/15</h4>
+                    <p>
+                        <span> 朋友圈(手写无限流哦)：<a target="_blank" href="20190215/pyquan.html">py圈</a></span>
+
+                    </p>
+                </div>
+                <div class="cntl-icon cntl-center">0215</div>
+            </div>
+
+            <div class="cntl-state">
+                <div class="cntl-content">
+                    <h4>2019/02/15-18 3</h4>
+                    <p>没有哦.</p>
+                </div>
+                <div class="cntl-icon cntl-center">0216~0218</div>
+            </div>
+
+            <div class="cntl-state">
+                <div class="cntl-content">
+                    <h4>2019/02/15</h4>
+                    <p>
+                        <span> 河北大学首页(狂炫酷拽吊炸天哦)：<a target="_blank" href="20190219/hbu.html">河大首页</a></span>
+
+                    </p>
+                </div>
+                <div class="cntl-icon cntl-center">0215</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.cntl').cntl({
+            revealbefore: 150,
+            anim_class: 'cntl-animate',
+            onreveal: function (e) {
+                console.log(e);
+            }
+        });
+    </script>
+</body>
+
+</html>
