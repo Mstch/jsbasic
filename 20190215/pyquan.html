@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "Microsoft YaHei UI Light", 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+            transition: all .2s;
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .header,
+        .main {
+            width: 100%;
+        }
+
+        .header {
+            height: 40%;
+            background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550204348672&di=bac08b7bfe15952b92f67ff6158babfe&imgtype=0&src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fnote%2Fl%2Fpublic%2Fp49994435.jpg') no-repeat;
+            background-size: 100% auto;
+        }
+
+        .header .info {
+            position: relative;
+            top: 70%;
+            left: 60%;
+        }
+
+        .header .info span {
+            font-size: 1.1rem;
+            position: relative;
+            top: -40px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: .5px .5px 0px #000;
+        }
+
+        .header img {
+            width: 20%;
+            border: 2px solid rgba(255, 255, 255, .9);
+            box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+        }
+
+        .main {
+            width: 98%;
+            margin: 0 auto;
+        }
+
+        .dongtai {
+            position: relative;
+            height: 300px;
+            ;
+            display: flex;
+            border-bottom: .8px solid #bbb;
+        }
+
+        .dongtai .avatar {
+            height: 60px;
+            ;
+            width: 60px;
+            ;
+        }
+
+        .dongtai .name {
+            color: #208;
+        }
+
+        .dongtai .content {
+            padding-top: 10px;
+            max-height: 5rem;
+            font-size: .8rem;
+            overflow: hidden;
+        }
+
+        .dongtai .time {
+            color: #999;
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+        }
+
+        .dongtai button {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            outline: none;
+        }
+
+        .dongtai .img {
+            display: flex;
+        }
+
+        .dongtai div.maincontent {
+            position: relative;
+            height: 95%;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="info">
+            <span>张晨</span>
+            <img class="avatar" src="avator.jpg" />
+        </div>
+    </div>
+    <div class="main">
+
+    </div>
+</body>
+<script>
+    let str = [
+        '读懂了西游记，才读懂了中国；了解了孙悟空，才了解中国人。西游文化，我个人认为，是我们中华五千年文化浓缩起来的一个精华，一个精髓，拼搏，进取，不屈不挠，永不言败，尤其是美猴王精神当中的乐观向上。   我好像看过哪个片子里，那个孙悟空是这么走的，师傅，走哎！',
+        '孙悟空怎么能和白骨精谈恋爱呢？人妖不分，是非颠倒，有意思吗？年轻人还在那笑，像这样的一个神话英雄、世界名著，如果如此恶搞，那么这个剧的主创人员、编导演需要向本国人民谢罪的',
+        '过去有句话叫一千个读者就有一千个哈姆雷特，但是我的心愿，我说句狂话，我希望我这个形象出来之后，一千个观众心目中只有一个美猴王！',
+        '大家好，我是六小龄童，是大闹天宫的首席文化大使，一朝大圣，一生大圣，演绎美猴王齐天大圣五十载。七十二变显神通，百般兵器样样有。火眼金睛金箍棒，重温西游文化经典，感受不一样的西游文化，俺老孙等着你'
+
+    ]
+    for (let i = 0; i < 100; i++) {
+        let imgrandom = parseInt(Math.random() * 3);
+        let imgsrc = imgrandom == 2 ? '2.gif' : imgrandom == 1 ? '1.jpg' : '3.jpg';
+        let strrandom = parseInt(Math.random() * 4);
+        let content = str[strrandom]
+        $('.main').append($(
+            '<div class="dongtai">\
+                <img class="avatar" src="avator.jpg" />\
+                <div class="maincontent">\
+                    <a class="name">张大晨</a>\
+                    <p class="content">\
+                        '+content+'\
+                        <div class="img"> <img src="' +
+            imgsrc +
+            '" width="150px" height="150px"></div>\
+                       \
+                    </p>\
+                    <span class="time">20分钟前</span>\
+                    <button><img src="icon.png" width="100%" /></button>\
+                </div>\
+            </div>'
+        ));
+    }
+</script>
+
+</html>

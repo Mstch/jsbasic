@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="tel" onchange="validateTel()">
+    <input type="text" id="url" onchange="validateURL()">
+    <input type="text" id="email" onchange="validateEmail()">
+</body>
+
+
+<script>
+    function validateTel() {
+        let telvalue = document.getElementById('tel').value;
+        if (!(/^1[34578]\d{9}$/.test(telvalue))) {
+            alert('请输入正确的手机号');
+        }
+    }
+
+    function validateURL() {
+        let url = document.getElementById('url').value;
+        if (!(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(url))) {
+            alert('请输入正确的网址');
+        }
+    }
+
+    function validateEmail() {
+        let email = document.getElementById('email').value;
+        if (!(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email))) {
+            alert('请输入正确的邮箱');
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://at.alicdn.com/t/font_1051577_37kdujqymjd.css" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Microsoft YaHei UI Light", 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+            transition: all .1s;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #1a82d2;
+        }
+
+        header .sysheader {
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            background: rgba(10, 10, 10, .1);
+        }
+
+        header .sysheader .systime {
+            flex: 0 0 25%;
+        }
+
+        header .sysheader .sysinfo {
+            padding-right: 5px;
+            flex: 0 0 60%;
+            text-align: right;
+        }
+
+        header .caifuheader {
+            color: #fff;
+            padding: 10px;
+        }
+
+        header .caifuheader>div {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        main{
+            padding: 10px;
+            padding-top: 20px;
+        }
+        main .mainicon>div {
+            width: 20%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    
+        main .mainicon>div>i{
+            display: block;
+            font-size: 1.5rem;
+            height: 2.2rem;;
+            color: #1a82d2;
+        }
+        main .mainicon>div>span{
+            font-size: .9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="sysheader">
+            <span class="systime">上午11:03</span>
+            <span class="sysinfo">0.2k/s
+                <i class="iconfont icon-jingyin"></i>
+                <i class="iconfont icon-icon-test"></i>
+                <i class="iconfont icon-xinhao"></i>4G
+                <i class="iconfont icon-dianliang" style="text-shadow:1px .1px #2222;font-size:1.3rem"></i>20%</span>
+        </div>
+        <div class="caifuheader">
+            <div style="width:100%">
+                <span style="font-size:2rem;">财富</span>
+                <i class="iconfont icon-sousuo1" style="font-size:2rem;float:right;clear:right"></i>
+            </div>
+            <div style="width:100%">
+                <span style="color:#eee9;font-size:.8rem;">总资产(元)&nbsp;&nbsp;<i style="font-size:.8rem;" class="iconfont icon-icon-"></i>保障中</span>
+                <span style="color:#eee9;width:40%;font-size:.8rem">昨日收益(元)&nbsp;&nbsp;<i style="font-size:1rem" class="iconfont icon-yanjing"></i></span>
+            </div>
+            <div style="width:100%;font-size:1.2rem;font-weight:650;">
+                <span>23,333,333,333</span>
+                <span style="width:40%">+2,564.72<span style="float:right">></span></span>
+            </div>
+            <span style="color:#eee9;font-size:.8rem">余额宝+2,564.72</span>
+        </div>
+    </header>
+    <main>
+        <div class="mainicon" style="display:flex;flex-wrap: wrap;">
+            <div>
+                <i class="iconfont icon-suo"></i>
+                <span>定期</span>
+            </div>
+            <div>
+                <i class="iconfont icon-gupiao"></i>
+                <span>基金</span>
+            </div>
+            <div>
+                <i class="iconfont icon-icon" style="font-size: 2.2rem;" ></i>
+                <span>余额宝</span>
+            </div>
+            <div>
+                <i class="iconfont icon-yuanbao"></i>
+                <span>黄金</span>
+            </div>
+            <div>
+                <i class="iconfont icon-gupiao"></i>
+                <span>股票</span>
+            </div>
+            <div>
+                <i class="iconfont icon-shengdanlaoren"></i>
+                <span>养老</span>
+            </div>
+            <span style="display:block;border-bottom:.1px solid #999">
+                <i class="iconfont icon-shang"></i>
+            </span>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
