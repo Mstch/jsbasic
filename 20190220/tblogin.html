@@ -1,9 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1052924_q955zufq8y.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
@@ -14,9 +16,86 @@
             margin: 0;
             overflow-x: hidden;
         }
+
+        header {
+            padding: 20px 80px;
+        }
+
+        .login-links {
+            width: 150px;
+            font-size: .8rem;
+            position: relative;
+            left: 200px;
+            top: 5px;
+        }
+
+        .login-links a {
+
+            color: #666;
+        }
+
+        #qrcode {
+            width: 90%;
+            height: 180px;
+            padding: 10px;
+            margin: 0 auto;
+        }
+
+        #qrcode img,
+        div {}
     </style>
 </head>
+
 <body>
-    
+    <header>
+        <i style="font-size:3rem;color:#ff5000" class="iconfont icon-taobaowang"></i>
+    </header>
+    <main style="height:600px;width:100%;background:url(https://gtms01.alicdn.com/tps/i1/TB1GTCYLXXXXXcHXpXXcoeQ2VXX-2500-600.jpg);background-position-x:center;">
+        <div style="top:150px;left:1000px;position:absolute;background:#fffd;width:350px;height:400px">
+            <span style="display:block;padding:35px;font-size:1.3rem;font-weight:800;color:#444;">手机扫码，安全登录</span>
+            <i  class="iconfont loginicon icon-diannaodenglu" style="position: absolute;top:0;right:0;font-size:2.5rem;color:#ff5000"></i>
+            <div id="qrcode">
+                <div id="qrcodeimg" style="position:relative;margin:0 auto;height:180px;">
+                    <img width="150px" style="position:absolute;left:80px;display:block" src="http://img.alicdn.com/tfscom/TB1rkB0H3HqK1RjSZFkwu0.WFXa.png">
+                    <div class="qrhelp" style="width:120px;display:none;position:absolute;left:180px;height:180px;background: url('http://gtms02.alicdn.com/tps/i2/TB16efXKVXXXXbOXXXX.C3E4VXX-120-182.png') no-repeat"></div>
+                </div>
+            </div>
+            <div style="width:200px;margin:0 auto;display:flex;padding:15px;flex-wrap:wrap">
+                <i style="font-size:2.2rem;color:#ff5000" class="iconfont icon-saomiao"> </i>
+                <p style="color:#777;font-size:.8rem;width:75%;padding:5px;">
+                    <span class="ft-gray">打开 </span>
+                    <a href="https://www.taobao.com/m" style="color:#ff5000" target="_blank" class="light-link">手机淘宝</a>
+                    | <a style="color:#ff5000" href="https://www.tmall.com/wow/portal/act/app-download?mmstat=pc_login"
+                        target="_blank" class="light-link">手机天猫</a>
+                    <span class="ft-gray">扫一扫登录</span>
+                </p>
+            </div>
+
+            <div class="login-links">
+                <a href="" target="_blank">密码登录</a>
+                <a href="http://reg.taobao.com/member/newbie.htm?from=login" class="register" target="_blank">免费注册</a>
+            </div>
+        </div>
+     
+    </main>
+    <script>
+        $('#qrcode').hover(() => {
+            $('#qrcodeimg>img').animate({
+                'left': '0px'
+            }, 100)
+            $('.qrhelp').show(50);
+        }, () => {
+
+            $('#qrcodeimg>img').animate({
+                'left': '60px'
+            }, 10)
+            $('.qrhelp').hide(50);
+        });
+        $('.loginicon').click(() => {
+            $('.loginicon').parent().hide();
+            $('.loginicon').parent().siblings().show();
+        });
+    </script>
 </body>
+
 </html>
