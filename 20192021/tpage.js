@@ -93,7 +93,7 @@
         }
         render() {
             let current = this.current;
-            let total = this.total||this.pageCount;
+            let total =this.pageCount;
             if (current < 0 || current > total) {
                 alert('跳转的页数非法哦');
                 return;
