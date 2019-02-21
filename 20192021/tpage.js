@@ -3,6 +3,7 @@
             let self = this;
             this.jqdom = $(jqselector);
             this.dataCount = arg.total;
+            this.total = arg.total;
             this.size = arg.size || 10;
             this.pageCount = parseInt(this.dataCount / this.size);
             this.current = arg.current || 1;
@@ -105,7 +106,7 @@
         }
         render() {
             let current = this.current;
-            let total = this.pageCount;
+            let total = this.total||this.pageCount;
             if (current < 0 || current > total) {
                 alert('跳转的页数非法哦');
                 return;

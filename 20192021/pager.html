@@ -16,6 +16,7 @@
 <body>
     <div id="pagenation">
     </div>
+    <input type="number"
 </body>
 <script>
     let page = new PageNation('#pagenation', {
@@ -23,9 +24,6 @@
         size: 5,
         current: 1
     })
-    page.jump(() => {
-        alert(123)
-    });
 </script>
 
 </html>
