@@ -1,12 +1,12 @@
   class PageNation {
         constructor(jqselector, arg) {
             let self = this;
+            this.current = arg.current || 1;
             this.jqdom = $(jqselector);
             this.dataCount = arg.total;
             this.total = arg.total;
             this.size = arg.size || 10;
             this.pageCount = parseInt(this.dataCount / this.size);
-            this.current = arg.current || 1;
             let pageNation = this;
             this.alldata = arg.data || [];
             this.pageNationInFronend = arg.pageNationInFronend;
