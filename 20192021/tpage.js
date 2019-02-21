@@ -1,6 +1,18 @@
   class PageNation {
         constructor(jqselector, arg) {
             let self = this;
+            let tempcurrent;
+            Object.defineProperties(self, {
+                current: {
+                    get() {
+                        return tempcurrent;
+                    },
+                    set(value) {
+                        tempcurrent = value;
+                        self.render();
+                    }
+                }
+            })
             this.current = arg.current || 1;
             this.jqdom = $(jqselector);
             this.dataCount = arg.total;
@@ -91,18 +103,6 @@
 
             this.render();
             this.jqdom.addClass('tpagenation');
-            let tempcurrent;
-            Object.defineProperties(self, {
-                current: {
-                    get() {
-                        return tempcurrent;
-                    },
-                    set(value) {
-                        tempcurrent = value;
-                        self.render();
-                    }
-                }
-            })
         }
         render() {
             let current = this.current;
