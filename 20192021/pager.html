@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "Microsoft YaHei UI Light", 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+            transition: all .5s;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        #pager{
+            display: flex;
+            margin-top: 20px;
+        }
+        button{
+            
+            border:1.5px solid #9993;
+            border-radius: 10px;
+            outline: none;
+            font-size: 1.3rem;
+            padding: .5rem;
+            margin-left: .5rem;
+            color: #444;
+            height: 3rem;
+            background: none;
+        }
+        #pagebtngroup{
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+        }
+        #pagebtngroup button{
+            width: 15%;
+            margin: 0;
+        }
+        #pagebtngroup .select{
+            
+            color: #fff;
+            background: #2085;
+        }
+        label,input,.totalpage{
+            height: 2.5rem;
+            line-height: 2.5rem;
+        }
+        .totalpage{
+            display: inline-block;
+        }
+        input{
+            border-radius: 5px;
+            border:1px solid #2088;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="args">
+        <label for="total">总数</label><input id="total" type="number" min="1" />
+        <label for="size">每页数量</label><input id="size" type="number" min="1" /></span>
+    <button id="changepage">应用</button>
+    <div id="pager">
+        <button onclick="first()" class="index">首页</button>
+        <button onclick="pre()" class="pre">上一页</button>
+        <div id="pagebtngroup">
+            <button onclick="numclick(this)" id="pagebtn0">1</button>
+            <button onclick="numclick(this)" id="pagebtn1">2</button>
+            <button onclick="numclick(this)" id="pagebtn2">3</button>
+            <button onclick="numclick(this)" id="pagebtn3">4</button>
+            <button onclick="numclick(this)" id="pagebtn4">5</button>
+        </div>
+        <button onclick="next()" class="next">下一页</button>
+        <button onclick="last()" class="last">末页</button>
+        <label>总页:</label><span class="totalpage"></span>
+        <span class="jump"><input type="number" min="1" class="num"><button onclick="jump()" class="jumpbtn">跳转</button></span>
+    </div>
+</body>
+<script>
+    let page = {
+        total: 1000,
+        size: 10,
+        current: 1
+    };
+    let pagerender = () => {
+        $('.select').removeClass('select');
+        let current = page.current;
+        let total = parseInt(page.total / page.size);
+        if (current == 1) {
+            $('.pre').hide(10);
+        } else {
+            $('.pre').show(10);
+        }
+        if (current == total) {
+            $('.next').hide(10);
+        } else {
+            $('.next').show(10);
+        }
+        $('.totalpage').text(parseInt(page.total / page.size));
+        if (total > 3) {
+            $('#pagebtngroup button').show();
+            if (current < 3) {
+                for (let i = 0; i < 5; i++) {
+                    $('#pagebtn' + i).text(1 + i);
+                }
+            } else if (current >= total - 3) {
+                for (let i = 0; i < 5; i++) {
+                    $('#pagebtn' + i).text(total - 4 + i);
+                }
+            } else
+                for (let i = 0; i < 5; i++) {
+                    $('#pagebtn' + i).text(current - 2 + i);
+                }
+        } else {
+            for (let i = total; i < 5; i++) {
+                console.log($('#pagebtn' + i))
+                $('#pagebtn' + i).hide();
+            }
+        }
+
+        for (let i = 0; i < 5; i++) {
+            if ($('#pagebtn' + i).text() == current) {
+                $('#pagebtn' + i).addClass('select');
+            }
+        }
+    }
+    let numclick = (e) => {
+        $(e).addClass('select');
+        setTimeout(() => {
+            page.current = $(e).text();
+            pagerender();
+        }, 100);
+    }
+    let pre = () => {
+        page.current--;
+        pagerender();
+    }
+    let next = () => {
+        page.current++
+        pagerender();
+    }
+    let first = () => {
+        page.current = 1;
+        pagerender();
+    }
+    let last = () => {
+        page.current = parseInt(page.total / page.size);
+        pagerender();
+    }
+    let jump = () => {
+        page.current = $('.num').val();
+        pagerender();
+    }
+    pagerender();
+    $('#changepage').click(() => {
+        page.total = $('#total').val();
+        page.size = $('#size').val();
+        page.current = 1;
+        pagerender();
+    });
+</script>
+
+</html>
