@@ -1,18 +1,5 @@
   class PageNation {
         constructor(jqselector, arg) {
-            let self = this;
-            let tempcurrent;
-            Object.defineProperties(self, {
-                current: {
-                    get() {
-                        return tempcurrent;
-                    },
-                    set(value) {
-                        tempcurrent = value;
-                        self.render();
-                    }
-                }
-            })
             this.current = arg.current || 1;
             this.jqdom = $(jqselector);
             this.dataCount = arg.total;
@@ -155,6 +142,7 @@
             else {
                 this.current++;
                 if (this._nextCallBack) this._nextCallBack();
+                this.render();
             }
         }
         pre(fn) {
@@ -162,6 +150,7 @@
             else {
                 this.current--;
                 if (this._preCallBack) this._preCallBack();
+                this.render();
             }
         }
         first(fn) {
@@ -169,6 +158,7 @@
             else {
                 this.current = 1;
                 if (this._preCallBack) this._preCallBack();
+                this.render();
             }
         }
         last(fn) {
@@ -177,6 +167,7 @@
             else {
                 this.current = this.pageCount;
                 if (this._lastCallBack) this._lastCallBack();
+                this.render();
             }
         }
         jump(fn) {
@@ -184,6 +175,7 @@
             else {
                 this.current = parseInt($('.jumppagenum').val()) || 1;
                 if (this._nextCallBack) this._nextCallBack();
+                this.render();
             }
         }
     }
