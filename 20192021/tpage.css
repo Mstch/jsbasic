@@ -1,0 +1,85 @@
+* {
+    font-family: "Microsoft YaHei UI Light", 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+    transition: all .2s;
+    padding: 0;
+    margin: 0;
+}
+
+.tpagenation {
+    display: flex;
+    height: 2.5rem;
+}
+
+.tpagenation>* {
+    line-height: 2.5rem;
+}
+
+.tpagenation button {
+    font-weight: 900;
+    font-size: .7rem;
+    height: 2rem;
+    line-height: .7rem;
+    border: .9px solid #2092;
+    border-radius: 5px;
+    background: none;
+    padding: .4rem;
+    outline: none;
+}
+
+.tpagenation button:hover {
+    background: #2084;
+    color: #fff;
+
+}
+
+.tpagenation #pagebtngroup {
+    display: flex;
+    justify-content: center;
+}
+
+.tpagenation #pagebtngroup button {
+    width: 2rem;
+    margin-left: .2rem;
+    margin-right: .2rem;
+    padding: 0px;
+    border: .9px solid #2091;
+    background: #9993;
+    color: #333;
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.tpagenation #pagebtngroup button.select {
+    background: #2088;
+    color: #fff;
+}
+
+.tpagenation div.opbtns {
+    display: flex;
+    justify-content: space-around;
+    width: 8rem;
+}
+
+.tpagenation div.opbtns button {
+    min-width: 3rem;
+}
+
+.tpagenation .pagejump {
+    font-weight: 500;
+}
+
+.tpagenation .jumppagenum {
+    margin-top: 5px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 1px solid #2088;
+}
+
+.tpagenation .totalspan {
+    font-size: 1.2rem;
+}
+
+.tpagenation .jumpbtn {
+    position: relative;
+    top: -2px;
+}
