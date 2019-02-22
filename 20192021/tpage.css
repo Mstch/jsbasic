@@ -29,6 +29,7 @@
 .tpagenation button:hover {
     background: #2084;
     color: #fff;
+    cursor: pointer;
 
 }
 
