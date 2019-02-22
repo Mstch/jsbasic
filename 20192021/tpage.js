@@ -48,7 +48,7 @@
             }
             this.pagenumCointer.find('button').click((event) => {
                 this.current = $(event.target).text();
-                // this.render();
+                this.render();
             });
             this.pagenumCointer.find('button.select').css({
                 'color': '#fff',
